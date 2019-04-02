@@ -16,9 +16,8 @@ class CreateAnhbeTable extends Migration
         Schema::create('anhbe', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->foreign('image_id')
-            ->references('id')->on('products')
-            ->onDelete('cascade');
+            $table->unsignedInteger('image_id');
+            $table->foreign('image_id')->references('id')->on('products');
             $table->timestamps();
         });
     }

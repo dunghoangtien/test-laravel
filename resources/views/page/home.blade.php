@@ -45,41 +45,23 @@
 						<div class="products-details">
 							<div class="preview_image">
 								<div class="preview-small">
-									<img id="zoom_03" src="public/source/images/products/medium/products-01.jpg" data-zoom-image="public/source/images/products/Large/products-01.jpg" alt="">
+									<img id="zoom_03" src="public/source/images/products/medium/{!! $product_sp->image_lon !!}" data-zoom-image="public/source/images/products/Large/{!! $product_sp->image_lon !!}" alt="">
 								</div>
 								<div class="thum-image">
 									<ul id="gallery_01" class="prev-thum">
+										@foreach($products as $sp)
 										<li>
-											<a href="#" data-image="public/source/images/products/medium/products-01.jpg" data-zoom-image="public/source/images/products/Large/products-01.jpg">
-												<img src="public/source/images/products/thum/products-01.png" alt="">
+											<a href="" data-image="public/source/images/products/medium/products-01.jpg" data-zoom-image="public/source/images/{!! $sp->name !!}">
+												<img src="public/source/images/products/thum/{!! $sp->name !!}" alt="">
 											</a>
 										</li>
-										<li>
-											<a href="#" data-image="public/source/images/products/medium/products-02.jpg" data-zoom-image="public/source/images/products/Large/products-02.jpg">
-												<img src="public/source/images/products/thum/products-02.png" alt="">
-											</a>
-										</li>
-										<li>
-											<a href="#" data-image="public/source/images/products/medium/products-03.jpg" data-zoom-image="public/source/images/products/Large/products-03.jpg">
-												<img src="public/source/images/products/thum/products-03.png" alt="">
-											</a>
-										</li>
-										<li>
-											<a href="#" data-image="public/source/images/products/medium/products-04.jpg" data-zoom-image="public/source/images/products/Large/products-04.jpg">
-												<img src="public/source/images/products/thum/products-04.png" alt="">
-											</a>
-										</li>
-										<li>
-											<a href="#" data-image="public/source/images/products/medium/products-05.jpg" data-zoom-image="public/source/images/products/Large/products-05.jpg">
-												<img src="public/source/images/products/thum/products-05.png" alt="">
-											</a>
-										</li>
+										@endforeach
 									</ul>
-									<a class="control-left" id="thum-prev" href="javascript:void(0);">
+									<a class="control-left" id="thum-prev" href="public/source/javascript:void(0);">
 										<i class="fa fa-chevron-left">
 										</i>
 									</a>
-									<a class="control-right" id="thum-next" href="javascript:void(0);">
+									<a class="control-right" id="thum-next" href="public/source/javascript:void(0);">
 										<i class="fa fa-chevron-right">
 										</i>
 									</a>
@@ -96,33 +78,34 @@
 									</a>
 								</p>
 								<p>
-									Availability: 
+									{!! $product_sp->name !!}
 									<span class=" light-red">
 										In Stock
 									</span>
 								</p>
 								<p>
-									Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lorem nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrie ces posuere cubilia curae. Proin lectus ipsum, gravida etds mattis vulps utate, tristique ut lectus. Sed et lorem nunc...
+									{!! $product_sp->chitietsanpham !!}
 								</p>
 								<hr class="border">
 								<div class="price">
-									Price : 
+									
 									<span class="new_price">
-										450.00
+										{!! $product_sp->price !!}
 										<sup>
-											$
+											Đ
 										</sup>
 									</span>
 									<span class="old_price">
-										450.00
+										{!! $product_sp->sale_price !!}
 										<sup>
-											$
+											Đ
 										</sup>
 									</span>
 								</div>
 								<hr class="border">
 								<div class="wided">
 									<div class="qty">
+										
 										<button type="button" class="btn btn-default">button</button>
 										<button type="button" class="btn btn-default">button</button>
 										<button type="button" class="btn btn-default">button</button>
